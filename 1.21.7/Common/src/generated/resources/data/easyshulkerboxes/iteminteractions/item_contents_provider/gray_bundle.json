@@ -1,6 +1,0 @@
-{
-  "type": "iteminteractions:bundle",
-  "background_color": "gray",
-  "capacity_multiplier": 1,
-  "supported_items": "minecraft:gray_bundle"
-}
