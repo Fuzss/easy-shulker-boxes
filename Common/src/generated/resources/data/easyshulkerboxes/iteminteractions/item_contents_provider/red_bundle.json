@@ -1,0 +1,6 @@
+{
+  "type": "iteminteractions:bundle",
+  "background_color": "red",
+  "capacity_multiplier": 1,
+  "supported_items": "minecraft:red_bundle"
+}

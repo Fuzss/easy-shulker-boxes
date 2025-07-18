@@ -1,0 +1,6 @@
+{
+  "type": "iteminteractions:bundle",
+  "background_color": "pink",
+  "capacity_multiplier": 1,
+  "supported_items": "minecraft:pink_bundle"
+}

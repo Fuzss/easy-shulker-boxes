@@ -1,0 +1,6 @@
+{
+  "type": "iteminteractions:bundle",
+  "background_color": "light_blue",
+  "capacity_multiplier": 1,
+  "supported_items": "minecraft:light_blue_bundle"
+}

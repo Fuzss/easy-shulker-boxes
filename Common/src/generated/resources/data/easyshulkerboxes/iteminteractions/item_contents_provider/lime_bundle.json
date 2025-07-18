@@ -1,0 +1,6 @@
+{
+  "type": "iteminteractions:bundle",
+  "background_color": "lime",
+  "capacity_multiplier": 1,
+  "supported_items": "minecraft:lime_bundle"
+}
