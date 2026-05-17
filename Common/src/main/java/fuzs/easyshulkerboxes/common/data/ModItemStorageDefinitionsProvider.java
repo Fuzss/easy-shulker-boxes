@@ -3,7 +3,10 @@ package fuzs.easyshulkerboxes.common.data;
 import fuzs.easyshulkerboxes.common.integration.ReinforcedShulkerBoxesIntegration;
 import fuzs.iteminteractions.common.api.v2.data.AbstractItemStorageDefinitionsProvider;
 import fuzs.iteminteractions.common.api.v2.world.item.DyeBackedColor;
-import fuzs.iteminteractions.common.api.v2.world.item.storage.*;
+import fuzs.iteminteractions.common.api.v2.world.item.storage.ContainerStorage;
+import fuzs.iteminteractions.common.api.v2.world.item.storage.EnderChestStorage;
+import fuzs.iteminteractions.common.api.v2.world.item.storage.ItemStorage;
+import fuzs.iteminteractions.common.api.v2.world.item.storage.StorageOptions;
 import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -11,7 +14,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataProvider;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -69,47 +71,8 @@ public abstract class ModItemStorageDefinitionsProvider extends AbstractItemStor
                 StorageOptions.DEFAULT.setFilterContainerItems()), Items.BLACK_SHULKER_BOX);
     }
 
-    public final void registerBundles(HolderLookup.RegistryLookup<Item> itemLookup) {
-        this.add(itemLookup,
-                new BundleContentsStorage(StorageOptions.DEFAULT.setFilterContainerItems()),
-                ItemTags.BUNDLES);
-    }
-
     public final void registerEnderChest(HolderLookup.RegistryLookup<Item> itemLookup) {
         this.add(EnderChestStorage.INSTANCE, Items.ENDER_CHEST);
-    }
-
-    public final void registerContainerItems(HolderLookup.RegistryLookup<Item> itemLookup) {
-        this.add(Identifier.withDefaultNamespace("dispenser"),
-                new ContainerStorage(3,
-                        3).interactionPermissions(ContainerStorage.InteractionPermissions.CREATIVE_ONLY),
-                Items.DISPENSER,
-                Items.DROPPER);
-        this.add(Identifier.withDefaultNamespace("chest"),
-                new ContainerStorage(9,
-                        3).interactionPermissions(ContainerStorage.InteractionPermissions.CREATIVE_ONLY),
-                Items.CHEST,
-                Items.TRAPPED_CHEST,
-                Items.BARREL);
-        this.add(itemLookup,
-                new ContainerStorage(9,
-                        3).interactionPermissions(ContainerStorage.InteractionPermissions.CREATIVE_ONLY),
-                ItemTags.COPPER_CHESTS);
-        this.add(new ContainerStorage(5,
-                1).interactionPermissions(ContainerStorage.InteractionPermissions.CREATIVE_ONLY), Items.HOPPER);
-        this.add(Identifier.withDefaultNamespace("furnace"),
-                new ContainerStorage(3,
-                        1).interactionPermissions(ContainerStorage.InteractionPermissions.CREATIVE_ONLY),
-                Items.FURNACE,
-                Items.BLAST_FURNACE,
-                Items.SMOKER);
-        this.add(new ContainerStorage(5,
-                1).interactionPermissions(ContainerStorage.InteractionPermissions.CREATIVE_ONLY), Items.BREWING_STAND);
-        this.add(Identifier.withDefaultNamespace("campfire"),
-                new ContainerStorage(4,
-                        1).interactionPermissions(ContainerStorage.InteractionPermissions.CREATIVE_ONLY),
-                Items.CAMPFIRE,
-                Items.SOUL_CAMPFIRE);
     }
 
     public final void registerModProviders(HolderLookup.RegistryLookup<Item> itemLookup) {

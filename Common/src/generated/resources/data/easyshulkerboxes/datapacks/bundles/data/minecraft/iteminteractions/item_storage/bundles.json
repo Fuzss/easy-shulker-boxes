@@ -1,9 +1,0 @@
-{
-  "type": "iteminteractions:bundle",
-  "capacity_multiplier": 1,
-  "storage_options": {
-    "disallowed": true,
-    "filter_container_items": true
-  },
-  "supported_items": "#minecraft:bundles"
-}

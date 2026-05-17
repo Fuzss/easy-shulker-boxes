@@ -10,3 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update to Minecraft 26.1.x
+
+### Removed
+
+- Remove support for all bundles; the whole functionality has been greatly expanded upon and will return as a separate
+  project
+- Remove support for map tooltip previews and generic container items (like furnace, brewing stand, etc.); as both were
+  very niche features to have

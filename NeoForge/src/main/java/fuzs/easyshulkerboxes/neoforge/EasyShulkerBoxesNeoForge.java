@@ -20,12 +20,8 @@ public class EasyShulkerBoxesNeoForge {
         ModConstructor.construct(EasyShulkerBoxes.MOD_ID, EasyShulkerBoxes::new);
         registerBuiltInDataProviders(EasyShulkerBoxes.SHULKER_BOXES_LOCATION,
                 ModItemStorageDefinitionsProvider::registerShulkerBoxes);
-        registerBuiltInDataProviders(EasyShulkerBoxes.BUNDLES_LOCATION,
-                ModItemStorageDefinitionsProvider::registerBundles);
         registerBuiltInDataProviders(EasyShulkerBoxes.ENDER_CHEST_LOCATION,
                 ModItemStorageDefinitionsProvider::registerEnderChest);
-        registerBuiltInDataProviders(EasyShulkerBoxes.CONTAINERS_LOCATION,
-                ModItemStorageDefinitionsProvider::registerContainerItems);
         registerBuiltInDataProviders(EasyShulkerBoxes.MOD_SUPPORT_LOCATION,
                 ModItemStorageDefinitionsProvider::registerModProviders);
     }
