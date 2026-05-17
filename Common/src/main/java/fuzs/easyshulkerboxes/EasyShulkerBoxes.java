@@ -1,10 +1,17 @@
 package fuzs.easyshulkerboxes;
 
-import fuzs.easyshulkerboxes.init.ModRegistry;
-import fuzs.puzzleslib.api.core.v1.ModConstructor;
-import fuzs.puzzleslib.api.core.v1.context.PackRepositorySourcesContext;
+import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
+import fuzs.puzzleslib.common.api.core.v1.context.ItemComponentsContext;
+import fuzs.puzzleslib.common.api.core.v1.context.PackRepositorySourcesContext;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentGetter;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.TooltipDisplay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,11 +28,6 @@ public class EasyShulkerBoxes implements ModConstructor {
     public static final Identifier MOD_SUPPORT_LOCATION = id("mod_support");
 
     @Override
-    public void onConstructMod() {
-        ModRegistry.bootstrap();
-    }
-
-    @Override
     public void onAddDataPackFinders(PackRepositorySourcesContext context) {
         context.registerBuiltInPack(SHULKER_BOXES_LOCATION, Component.literal("Shulker Boxes"), true);
         context.registerBuiltInPack(BUNDLES_LOCATION, Component.literal("Bundles"), true);
@@ -33,6 +35,17 @@ public class EasyShulkerBoxes implements ModConstructor {
         context.registerBuiltInPack(CONTAINERS_LOCATION, Component.literal("Containers"), false);
         context.registerBuiltInPack(MAP_LOCATION, Component.literal("Map"), false);
         context.registerBuiltInPack(MOD_SUPPORT_LOCATION, Component.literal("Mod Support"), false);
+    }
+
+    @Override
+    public void onRegisterItemComponentPatches(ItemComponentsContext context) {
+        context.registerItemComponentsPatch((DataComponentGetter components, DataComponentMap.Builder builder, HolderLookup.Provider registries, Item item) -> {
+            if (components.get(DataComponents.CONTAINER) != null && registries.getOrThrow(ItemTags.SHULKER_BOXES)
+                    .contains(item.builtInRegistryHolder())) {
+                builder.set(DataComponents.TOOLTIP_DISPLAY,
+                        TooltipDisplay.DEFAULT.withHidden(DataComponents.CONTAINER, true));
+            }
+        });
     }
 
     public static Identifier id(String path) {

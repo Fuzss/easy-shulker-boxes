@@ -1,9 +1,9 @@
 package fuzs.easyshulkerboxes.integration;
 
-import fuzs.iteminteractions.api.v1.DyeBackedColor;
-import fuzs.iteminteractions.api.v1.provider.ItemContentsProvider;
-import fuzs.iteminteractions.api.v1.provider.impl.ContainerProvider;
-import net.minecraft.resources.Identifier;
+import fuzs.iteminteractions.common.api.v2.world.item.DyeBackedColor;
+import fuzs.iteminteractions.common.api.v2.world.item.storage.ContainerStorage;
+import fuzs.iteminteractions.common.api.v2.world.item.storage.ItemStorage;
+import fuzs.iteminteractions.common.api.v2.world.item.storage.StorageOptions;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.DyeColor;
 import org.jspecify.annotations.Nullable;
@@ -16,15 +16,19 @@ public final class ReinforcedShulkerBoxesIntegration {
         // NO-OP
     }
 
-    public static void registerModProviders(BiConsumer<Identifier, ItemContentsProvider> providerRegistrar) {
+    public static void registerModProviders(BiConsumer<Identifier, ItemStorage> registrar) {
         for (ShulkerBoxMaterial material : ShulkerBoxMaterial.values()) {
-            providerRegistrar.accept(material.id(),
-                    new ContainerProvider(material.width, material.height, null).filterContainerItems(true));
+            registrar.accept(material.id(),
+                    new ContainerStorage(material.width,
+                            material.height,
+                            null,
+                            StorageOptions.DEFAULT.setFilterContainerItems()));
             for (DyeColor dyeColor : DyeColor.values()) {
-                providerRegistrar.accept(material.id(dyeColor),
-                        new ContainerProvider(material.width,
+                registrar.accept(material.id(dyeColor),
+                        new ContainerStorage(material.width,
                                 material.height,
-                                DyeBackedColor.fromDyeColor(dyeColor)).filterContainerItems(true));
+                                DyeBackedColor.fromDyeColor(dyeColor),
+                                StorageOptions.DEFAULT.setFilterContainerItems()));
             }
         }
     }

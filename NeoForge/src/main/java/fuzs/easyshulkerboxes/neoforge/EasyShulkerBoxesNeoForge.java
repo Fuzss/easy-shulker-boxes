@@ -1,8 +1,8 @@
 package fuzs.easyshulkerboxes.neoforge;
 
 import fuzs.easyshulkerboxes.EasyShulkerBoxes;
-import fuzs.easyshulkerboxes.data.ModItemContentsProvider;
-import fuzs.puzzleslib.api.core.v1.ModConstructor;
+import fuzs.easyshulkerboxes.data.ModItemStorageDefinitionsProvider;
+import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.DataProviderHelper;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.NeoForgeDataProviderContext;
 import net.minecraft.core.HolderLookup;
@@ -19,23 +19,22 @@ public class EasyShulkerBoxesNeoForge {
     public EasyShulkerBoxesNeoForge() {
         ModConstructor.construct(EasyShulkerBoxes.MOD_ID, EasyShulkerBoxes::new);
         registerBuiltInDataProviders(EasyShulkerBoxes.SHULKER_BOXES_LOCATION,
-                ModItemContentsProvider::registerShulkerBoxProviders);
+                ModItemStorageDefinitionsProvider::registerShulkerBoxes);
         registerBuiltInDataProviders(EasyShulkerBoxes.BUNDLES_LOCATION,
-                ModItemContentsProvider::registerBundleProviders);
+                ModItemStorageDefinitionsProvider::registerBundles);
         registerBuiltInDataProviders(EasyShulkerBoxes.ENDER_CHEST_LOCATION,
-                ModItemContentsProvider::registerEnderChestProvider);
+                ModItemStorageDefinitionsProvider::registerEnderChest);
         registerBuiltInDataProviders(EasyShulkerBoxes.CONTAINERS_LOCATION,
-                ModItemContentsProvider::registerContainerProviders);
-        registerBuiltInDataProviders(EasyShulkerBoxes.MAP_LOCATION, ModItemContentsProvider::registerMapProvider);
+                ModItemStorageDefinitionsProvider::registerContainerItems);
         registerBuiltInDataProviders(EasyShulkerBoxes.MOD_SUPPORT_LOCATION,
-                ModItemContentsProvider::registerModProviders);
+                ModItemStorageDefinitionsProvider::registerModProviders);
     }
 
-    private static void registerBuiltInDataProviders(Identifier identifier, BiConsumer<ModItemContentsProvider, HolderLookup.RegistryLookup<Item>> providerRegistrar) {
+    private static void registerBuiltInDataProviders(Identifier identifier, BiConsumer<ModItemStorageDefinitionsProvider, HolderLookup.RegistryLookup<Item>> providerRegistrar) {
         DataProviderHelper.registerDataProviders(identifier,
                 PackType.SERVER_DATA,
                 (NeoForgeDataProviderContext context) -> {
-                    return ModItemContentsProvider.of(context, providerRegistrar);
+                    return ModItemStorageDefinitionsProvider.of(context, providerRegistrar);
                 });
     }
 }

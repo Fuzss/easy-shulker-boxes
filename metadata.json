@@ -1,9 +1,10 @@
 {
+    "minecraft": "26.1.2",
     "mod": {
         "id": "easyshulkerboxes",
         "group": "fuzs.easyshulkerboxes",
         "name": "Easy Shulker Boxes",
-        "version": "21.11.0",
+        "version": "26.1.0",
         "authors": [
             "Fuzs"
         ],
@@ -44,13 +45,13 @@
     ],
     "links": [
         {
-            "name": "github",
-            "slug": "easyshulkerboxes"
-        },
-        {
             "name": "curseforge",
             "slug": "easy-shulker-boxes",
             "id": "594006"
+        },
+        {
+            "name": "github",
+            "slug": "easy-shulker-boxes"
         },
         {
             "name": "modrinth",
