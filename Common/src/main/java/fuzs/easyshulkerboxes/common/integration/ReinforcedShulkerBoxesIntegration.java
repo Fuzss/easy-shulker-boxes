@@ -1,4 +1,4 @@
-package fuzs.easyshulkerboxes.integration;
+package fuzs.easyshulkerboxes.common.integration;
 
 import fuzs.iteminteractions.common.api.v2.world.item.DyeBackedColor;
 import fuzs.iteminteractions.common.api.v2.world.item.storage.ContainerStorage;

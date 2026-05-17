@@ -1,7 +1,7 @@
 package fuzs.easyshulkerboxes.fabric.client;
 
-import fuzs.easyshulkerboxes.EasyShulkerBoxes;
-import fuzs.easyshulkerboxes.client.EasyShulkerBoxesClient;
+import fuzs.easyshulkerboxes.common.EasyShulkerBoxes;
+import fuzs.easyshulkerboxes.common.client.EasyShulkerBoxesClient;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import net.fabricmc.api.ClientModInitializer;
 

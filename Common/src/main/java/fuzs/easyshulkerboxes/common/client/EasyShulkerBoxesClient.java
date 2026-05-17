@@ -1,6 +1,6 @@
-package fuzs.easyshulkerboxes.client;
+package fuzs.easyshulkerboxes.common.client;
 
-import fuzs.easyshulkerboxes.EasyShulkerBoxes;
+import fuzs.easyshulkerboxes.common.EasyShulkerBoxes;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import fuzs.puzzleslib.common.api.config.v3.ConfigHolder;
 

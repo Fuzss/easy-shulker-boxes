@@ -1,7 +1,7 @@
 package fuzs.easyshulkerboxes.neoforge;
 
-import fuzs.easyshulkerboxes.EasyShulkerBoxes;
-import fuzs.easyshulkerboxes.data.ModItemStorageDefinitionsProvider;
+import fuzs.easyshulkerboxes.common.EasyShulkerBoxes;
+import fuzs.easyshulkerboxes.common.data.ModItemStorageDefinitionsProvider;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.DataProviderHelper;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.NeoForgeDataProviderContext;

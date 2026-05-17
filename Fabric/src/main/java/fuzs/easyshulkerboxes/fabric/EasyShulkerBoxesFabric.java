@@ -1,6 +1,6 @@
 package fuzs.easyshulkerboxes.fabric;
 
-import fuzs.easyshulkerboxes.EasyShulkerBoxes;
+import fuzs.easyshulkerboxes.common.EasyShulkerBoxes;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import net.fabricmc.api.ModInitializer;
 

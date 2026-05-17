@@ -1,6 +1,6 @@
-package fuzs.easyshulkerboxes.data;
+package fuzs.easyshulkerboxes.common.data;
 
-import fuzs.easyshulkerboxes.integration.ReinforcedShulkerBoxesIntegration;
+import fuzs.easyshulkerboxes.common.integration.ReinforcedShulkerBoxesIntegration;
 import fuzs.iteminteractions.common.api.v2.data.AbstractItemStorageDefinitionsProvider;
 import fuzs.iteminteractions.common.api.v2.world.item.DyeBackedColor;
 import fuzs.iteminteractions.common.api.v2.world.item.storage.*;
