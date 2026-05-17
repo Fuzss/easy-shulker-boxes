@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    modCompileOnly(libs.puzzleslib.common)
-    modApi(libs.puzzleslib.neoforge)
-    modCompileOnly(libs.iteminteractions.common)
-    modApi(libs.iteminteractions.neoforge)
-    include(libs.iteminteractions.neoforge)
+    modCompileOnly(sharedLibs.puzzleslib.common)
+    modApi(sharedLibs.puzzleslib.neoforge)
+    modCompileOnly(sharedLibs.iteminteractions.common)
+    modApi(sharedLibs.iteminteractions.neoforge)
+    include(sharedLibs.iteminteractions.neoforge)
 }
