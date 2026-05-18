@@ -26,11 +26,11 @@ public abstract class ModItemStorageDefinitionsProvider extends AbstractItemStor
         super(context);
     }
 
-    public static DataProvider of(DataProviderContext context, BiConsumer<ModItemStorageDefinitionsProvider, HolderLookup.RegistryLookup<Item>> providerRegistrar) {
+    public static DataProvider of(DataProviderContext context, BiConsumer<ModItemStorageDefinitionsProvider, HolderLookup.RegistryLookup<Item>> registrar) {
         return new ModItemStorageDefinitionsProvider(context) {
             @Override
             public void addItemStorageDefinitions(HolderLookup.Provider registries) {
-                providerRegistrar.accept(this, registries.lookupOrThrow(Registries.ITEM));
+                registrar.accept(this, registries.lookupOrThrow(Registries.ITEM));
             }
         };
     }

@@ -26,11 +26,11 @@ public class EasyShulkerBoxesNeoForge {
                 ModItemStorageDefinitionsProvider::registerModProviders);
     }
 
-    private static void registerBuiltInDataProviders(Identifier identifier, BiConsumer<ModItemStorageDefinitionsProvider, HolderLookup.RegistryLookup<Item>> providerRegistrar) {
+    private static void registerBuiltInDataProviders(Identifier identifier, BiConsumer<ModItemStorageDefinitionsProvider, HolderLookup.RegistryLookup<Item>> registrar) {
         DataProviderHelper.registerDataProviders(identifier,
                 PackType.SERVER_DATA,
                 (NeoForgeDataProviderContext context) -> {
-                    return ModItemStorageDefinitionsProvider.of(context, providerRegistrar);
+                    return ModItemStorageDefinitionsProvider.of(context, registrar);
                 });
     }
 }
