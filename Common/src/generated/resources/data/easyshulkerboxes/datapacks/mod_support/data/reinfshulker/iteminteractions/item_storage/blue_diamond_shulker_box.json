@@ -5,9 +5,5 @@
   "interaction_permissions": "always",
   "inventory_height": 9,
   "inventory_width": 12,
-  "storage_options": {
-    "disallowed": true,
-    "filter_container_items": true
-  },
   "supported_items": "reinfshulker:blue_diamond_shulker_box"
 }
