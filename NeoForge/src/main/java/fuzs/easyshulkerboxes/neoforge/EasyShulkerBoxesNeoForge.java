@@ -18,11 +18,11 @@ public class EasyShulkerBoxesNeoForge {
 
     public EasyShulkerBoxesNeoForge() {
         ModConstructor.construct(EasyShulkerBoxes.MOD_ID, EasyShulkerBoxes::new);
-        registerBuiltInDataProviders(EasyShulkerBoxes.SHULKER_BOXES_LOCATION,
+        registerBuiltInDataProviders(EasyShulkerBoxes.SHULKER_BOXES_ID,
                 ModItemStorageDefinitionsProvider::registerShulkerBoxes);
-        registerBuiltInDataProviders(EasyShulkerBoxes.ENDER_CHEST_LOCATION,
+        registerBuiltInDataProviders(EasyShulkerBoxes.ENDER_CHEST_ID,
                 ModItemStorageDefinitionsProvider::registerEnderChest);
-        registerBuiltInDataProviders(EasyShulkerBoxes.MOD_SUPPORT_LOCATION,
+        registerBuiltInDataProviders(EasyShulkerBoxes.MOD_SUPPORT_ID,
                 ModItemStorageDefinitionsProvider::registerModProviders);
     }
 
