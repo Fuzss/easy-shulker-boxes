@@ -1,18 +1,9 @@
 package fuzs.easyshulkerboxes.common;
 
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
-import fuzs.puzzleslib.common.api.core.v1.context.ItemComponentsContext;
 import fuzs.puzzleslib.common.api.core.v1.context.PackRepositorySourcesContext;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.component.DataComponentGetter;
-import net.minecraft.core.component.DataComponentMap;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.component.TooltipDisplay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,18 +21,6 @@ public class EasyShulkerBoxes implements ModConstructor {
         context.registerBuiltInPack(SHULKER_BOXES_ID, Component.literal("Shulker Boxes"), true);
         context.registerBuiltInPack(ENDER_CHEST_ID, Component.literal("Ender Chest"), true);
         context.registerBuiltInPack(MOD_SUPPORT_ID, Component.literal("Mod Support"), false);
-    }
-
-    @Override
-    public void onRegisterItemComponentPatches(ItemComponentsContext context) {
-        context.registerItemComponentsPatch((DataComponentGetter components, DataComponentMap.Builder builder, HolderLookup.Provider registries, Item item) -> {
-            if (components.get(DataComponents.CONTAINER) != null && registries.get(ItemTags.SHULKER_BOXES)
-                    .filter((HolderSet.Named<Item> holderSet) -> holderSet.contains(item.builtInRegistryHolder()))
-                    .isPresent()) {
-                builder.set(DataComponents.TOOLTIP_DISPLAY,
-                        TooltipDisplay.DEFAULT.withHidden(DataComponents.CONTAINER, true));
-            }
-        });
     }
 
     public static Identifier id(String path) {
