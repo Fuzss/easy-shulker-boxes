@@ -4,7 +4,7 @@
         "id": "easyshulkerboxes",
         "group": "fuzs.easyshulkerboxes",
         "name": "Easy Shulker Boxes",
-        "version": "26.2.1",
+        "version": "26.2.2",
         "authors": [
             "Fuzs"
         ],
@@ -12,14 +12,6 @@
         "license": "MPL-2.0"
     },
     "dependencies": [
-        {
-            "name": "iteminteractions",
-            "type": "embedded",
-            "platforms": [
-                "fabric",
-                "neoforge"
-            ]
-        },
         {
             "name": "fabricapi",
             "type": "required",
@@ -32,6 +24,14 @@
             "type": "required",
             "platforms": [
                 "fabric"
+            ]
+        },
+        {
+            "name": "iteminteractions",
+            "type": "embedded",
+            "platforms": [
+                "fabric",
+                "neoforge"
             ]
         },
         {
