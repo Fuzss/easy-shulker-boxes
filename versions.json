@@ -6,11 +6,17 @@
     "26.1.x": "maintained",
     "26.2.x": "primary"
   },
-  "properties": {
-    "distributions.curseforge.id": "594006",
-    "distributions.curseforge.slug": "easy-shulker-boxes",
-    "distributions.github.slug": "easy-shulker-boxes",
-    "distributions.modrinth.id": "gA5euN8S",
-    "distributions.modrinth.slug": "easy-shulker-boxes"
+  "distributions": {
+    "curseforge": {
+      "id": "594006",
+      "slug": "easy-shulker-boxes"
+    },
+    "github": {
+      "slug": "easy-shulker-boxes"
+    },
+    "modrinth": {
+      "id": "gA5euN8S",
+      "slug": "easy-shulker-boxes"
+    }
   }
 }
