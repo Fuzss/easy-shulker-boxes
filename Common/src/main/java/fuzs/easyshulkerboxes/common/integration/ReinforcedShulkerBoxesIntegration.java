@@ -22,13 +22,13 @@ public final class ReinforcedShulkerBoxesIntegration {
                     new ContainerStorage(material.width,
                             material.height,
                             null,
-                            StorageOptions.DEFAULT.setFilterContainerItems()));
+                            StorageOptions.DEFAULT));
             for (DyeColor dyeColor : DyeColor.values()) {
                 registrar.accept(material.id(dyeColor),
                         new ContainerStorage(material.width,
                                 material.height,
                                 DyeBackedColor.fromDyeColor(dyeColor),
-                                StorageOptions.DEFAULT.setFilterContainerItems()));
+                                StorageOptions.DEFAULT));
             }
         }
     }
